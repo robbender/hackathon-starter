@@ -28,8 +28,7 @@
 //DEP Automation
 language: node_js
 node_js:
-  - "8"
-  - "9"
+  - "7"
 services:
   - mongodb
 install:
