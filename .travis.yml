@@ -1,25 +1,18 @@
 #// From original forked repo
-language: node_js
-node_js:
-  - "8"
-  - "9"
-services: mongodb
-cache:
-  directories:
-    - "node_modules"
-sudo: false
-install:
-  - npm install
-  #// From CoderCamps Automation
-deploy:
-  provider: script
-  skip_cleanup: true
-  script: /bin/sh deploy.sh
-  on:
-    branch: master
-script:
-  - npm run lint
-  - npm test
+# language: node_js
+# node_js:
+#   - "8"
+#   - "9"
+# services: mongodb
+# cache:
+#   directories:
+#     - "node_modules"
+# sudo: false
+# install:
+#   - npm install
+# script:
+#   - npm run lint
+#   - npm test
 
 #// From Coder Camps
 # .travis.yml file
@@ -32,19 +25,19 @@ script:
 # script:
 #   - npm test
 
-# //DEP Automation
-# language: node_js
-# node_js:
-#   - "7"
-# services:
-#   - mongodb
-# install:
-#   - npm install
-# deploy:
-#   provider: script
-#   skip_cleanup: true
-#   script: /bin/sh deploy.sh
-#   on:
-#     branch: master
-# script:
-#   - npm test
+//DEP Automation
+language: node_js
+node_js:
+  - "7"
+services:
+  - mongodb
+install:
+  - npm install
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: /bin/sh deploy.sh
+  on:
+    branch: master
+script:
+  - npm test
